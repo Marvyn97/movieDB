@@ -1,0 +1,25 @@
+h1 {
+    font-size: 3.3rem;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 2px 3px 0px #546fe4;
+}
+
+nav {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 1.3rem;
+}
+
+ul {
+    display: flex;
+}
+
+a {
+    text-decoration: none;
+    border-radius: 10px;
+    width: 102px;
+    text-align: center;
+    margin-right: 5px;
+}
