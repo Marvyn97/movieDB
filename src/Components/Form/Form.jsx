@@ -18,7 +18,7 @@ const Form = () => {
       }, [search]);
 
 
-// console.log(moviesData);
+ // console.log(moviesData);
 
       
     return (
