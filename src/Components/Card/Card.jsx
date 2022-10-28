@@ -1,8 +1,8 @@
 import React from 'react';
 import style from './card.module.css';
-import GenreFinder from './GenreFinder';
 
-function Card({item}) {
+
+function Card({movie}) {
 
     const dateLocal = (date) => {
         let [yy, mm, dd] = date.split("-");
@@ -11,8 +11,8 @@ function Card({item}) {
 
     const genreFinder = () => {
         let genreArray = [];
-        for (let i = 0; i < item.genre_ids.length; i++) {
-          switch (item.genre_ids[i]) {
+        for (let i = 0; i < movie.genre_ids.length; i++) {
+          switch (movie.genre_ids[i]) {
             case 28:
               genreArray.push(`Action`);
               break;
@@ -78,34 +78,34 @@ function Card({item}) {
       };
 
     const addStorage = () => {
-        let storedData = window.localStorage.items ? window.localStorage.items.split(",") : [];
-        if (!storedData.includes(item.id.toString())) {
-            storedData.push(item.id);
-            window.localStorage.items = storedData;
+        let storedData = window.localStorage.movies ? window.localStorage.movies.split(",") : [];
+        if (!storedData.includes(movie.id.toString())) {
+            storedData.push(movie.id);
+            window.localStorage.movies = storedData;
         }
-        console.log(storedData);
+        //console.log(storedData);
     };
 
     const deleteSorage = () => {
-        let storedData = window.localStorage.item.split(",");
-        let newData = storedData.filter((id) => id != item.id);
-        window.localStorage.items = newData;
+        let storedData = window.localStorage.movie.split(",");
+        let newData = storedData.filter((id) => id !== movie.id);
+        window.localStorage.movies = newData;
     };
 
     return (
         <section className={style.card}>
-            <img src={item.poster_path ? "https://image.tmdb.org/t/p/w500" + item.poster_path : "./img/poster.jpg"} alt={`affiche ${item.title}`} />
-            <h2> {item.title}</h2>
-            <h5> sortie le : {dateLocal(item.release_date)} </h5>
-            <h4>{item.vote_average.toFixed(1)}/10 <span>⭐</span></h4>
+            <img src={movie.poster_path ? "https://image.tmdb.org/t/p/w500" + movie.poster_path : "./img/poster.jpg"} alt={`affiche ${movie.title}`} />
+            <h2> {movie.title}</h2>
+            <h5> sortie le : {dateLocal(movie.release_date)} </h5>
+            <h4>{movie.vote_average.toFixed(1)}/10 <span>⭐</span></h4>
             <ul>
-                {item.genre_ids
+                {movie.genre_ids
                     ? genreFinder()
-                    : item.genres.map((genre) => <li key={genre}>{genre.name}</li>)}
+                    : movie.genres.map((genre) => <li key={genre}>{genre.name}</li>)}
                 </ul>
-            {item.overview ? <h3>Synopsis</h3> : "Pas de Synopsis"}
-            <p>{item.overview}</p>
-            {item.genre_ids ? (
+            {movie.overview ? <h3>Synopsis</h3> : "Pas de Synopsis"}
+            <p>{movie.overview}</p>
+            {movie.genre_ids ? (
                 <div className={style.btn} onClick={() => addStorage()}>
                     Ajouter aux coups de coeur
                 </div>

@@ -9,8 +9,8 @@ function App() {
    <BrowserRouter>
     <Routes>
      <Route path="/" element={<Home />} />
-     <Route path="/coup-de-coeur" element={<Favorite /> } />
-     <Route path="*" element={<Home />} /> // a changé plus tard en page404
+     <Route path="/coups-de-coeur" element={<Favorite /> } />
+     <Route path="*" element={<Home />} /> 
     </Routes>
    </BrowserRouter>
   );

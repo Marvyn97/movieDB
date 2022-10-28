@@ -5,13 +5,27 @@ import style from './header.module.css'
 const Header = () => {
     return (
         <section className={style.header}>
-            <h1>MovieDB</h1>
-            <nav>
+           <nav>
                 <ul>
-                    <NavLink to= "/" ><li>Accueil</li></NavLink>
-                    <NavLink to= "coup-de-coeur"><li>Coup de coeur</li></NavLink>
+                    <li>
+                        <NavLink
+                            to="/"
+                            className={(nav) => (nav.isActive ? style.nav_active : "")}
+                        >
+                        Accueil
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink
+                            to="/coups-de-coeur"
+                            className={(nav) => (nav.isActive ? style.nav_active : "")}
+                        >
+                            Coups de coeur
+                        </NavLink>
+                    </li>
                 </ul>
             </nav>
+            <h1>React Movies</h1>
         </section>
     );
 }

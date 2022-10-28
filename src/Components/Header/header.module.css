@@ -14,12 +14,33 @@ nav {
 
 ul {
     display: flex;
+    width: 180px;
+    justify-content: space-between;
 }
 
 a {
     text-decoration: none;
+    color: var(--color-white);
     border-radius: 10px;
     width: 102px;
     text-align: center;
     margin-right: 5px;
+    padding: 4px 8px;
+}
+
+a:visited {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+a:hover {
+    background: var(--color-black);
+}
+
+a.nav_active {
+    background: var(--color-1);
+}
+
+a.nav_active:hover {
+    background: var(--color-black);
 }

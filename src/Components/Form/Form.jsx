@@ -18,7 +18,7 @@ const Form = () => {
       }, [search]);
 
 
- // console.log(moviesData);
+  //console.log(moviesData);
 
       
     return (
@@ -55,8 +55,8 @@ const Form = () => {
                         return a.vote_average - b.vote_average;
                     }
                 })
-                .map((item) => (
-                    <Card item={item} key={item.id}/>
+                .map((movie) => (
+                    <Card movie={movie} key={movie.id}/>
                 ))}
             </div>
         </section>
