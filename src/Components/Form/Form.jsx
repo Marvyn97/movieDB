@@ -53,6 +53,8 @@ const Form = () => {
                         return b.vote_average - a.vote_average;
                     } else if (sortGoodBad === "badToGood") {
                         return a.vote_average - b.vote_average;
+                    } else {
+                        return null;
                     }
                 })
                 .map((movie) => (
