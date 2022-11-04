@@ -79,6 +79,7 @@ function Card({movie}) {
 
     const addStorage = () => {
         let storedData = window.localStorage.movies ? window.localStorage.movies.split(",") : [];
+
         if (!storedData.includes(movie.id.toString())) {
             storedData.push(movie.id);
             window.localStorage.movies = storedData;
@@ -86,9 +87,9 @@ function Card({movie}) {
         //console.log(storedData);
     };
 
-    const deleteSorage = () => {
-        let storedData = window.localStorage.movie.split(",");
-        let newData = storedData.filter((id) => id !== movie.id);
+    const deleteStorage = () => {
+        let storedData = window.localStorage.movies.split(",");
+        let newData = storedData.filter((id) => id != movie.id);
         window.localStorage.movies = newData;
     };
 
@@ -111,7 +112,7 @@ function Card({movie}) {
                 </div>
             ) : (
                 <div className={style.btn} onClick={() => {
-                    deleteSorage();
+                    deleteStorage();
                     window.location.reload();
                 }}>
                     Supprimer de la liste

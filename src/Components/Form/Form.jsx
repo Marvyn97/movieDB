@@ -27,20 +27,20 @@ const Form = () => {
                 <form>
                     <input type='text'
                     placeholder="saisir un film" 
-                    id='search-input'
+                    id={style.search_input}
                     onChange={(e) => setSearch(e.target.value)}
                     />
                     {/* <input type="submit" value="Rechercher" /> */}
                 </form>
                 <div className={style.btn_sort_container}>
                     <div className={style.btn_sort}
-                    id='goodtobad'
+                    id={style.goodToBad}
                     onClick={() => setSortGoodBad('goodToBad')}
                     >
                     Top<span>➜</span>  
                     </div>
                     <div className={style.btn_sort}
-                    id='badToGood'
+                    id={style.badToGood}
                     onClick={() => setSortGoodBad('badToGood')}
                     >
                     Flop<span>➜</span>  
@@ -61,6 +61,6 @@ const Form = () => {
             </div>
         </section>
     );
-}
+};
 
 export default Form;

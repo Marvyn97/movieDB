@@ -13,16 +13,16 @@ const Favorite = () => {
       ? window.localStorage.movies.split(",")
       : [];
     
-      for (let i = 0; i < moviesId.lenght; i++) {
+      for (let i = 0; i < moviesId.length; i++) {
         axios
             .get(
                 `https://api.themoviedb.org/3/movie/${moviesId[i]}?api_key=05fa9fb0d4295b391192426b93e9322b&language=fr-FR`
             )
             .then((res) => setListData((listData) => [...listData, res.data]));
         }
-        console.log(`moviesId dans favorite ==> ${moviesId}`);
     }, []);
-
+    
+    //console.log(listData);
     
     return (
         <div className={style.user_list_page}>

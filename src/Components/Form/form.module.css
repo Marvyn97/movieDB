@@ -1,86 +1,88 @@
-.form_component, .form_container {
+.form_component .form_container {
       text-align: center;
     }
 
-    form {
+.form_component form {
       width: 300px;
       margin: 0 auto;
     }
   
-      input[type="text"] {
-        padding: 1px 10px;
-        border-radius: 10px 10px 0 0;
-        border: none;
-        font-size: 1.5rem;
-        display: block;
-        margin: 0 auto;
-        width: 220px;
-        outline: none;
-        text-align: center;
-      }
+.form_component form input[type="text"] {
+    padding: 1px 10px;
+    border-radius: 10px 10px 0 0;
+    border: none;
+    font-size: 1.5rem;
+    display: block;
+    margin: 0 auto;
+    width: 220px;
+    outline: none;
+    text-align: center;
+  }
 
-      input[type="submit"] {
-        padding: 1px 10px;
-        width: 220px;
-        border-radius: 0 0 10px 10px;
-        border: none;
-        /* background: $color-1; */
-        color: white;
-        font-size: 1.5rem;
-        cursor: pointer;
-        z-index: 10;
-        position: relative;
-      }
+/* .form_component form input[type="submit"] {
+  padding: 1px 10px;
+  width: 220px;
+  border-radius: 0 0 10px 10px;
+  border: none;
+    background: var(--color-1); 
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  position: relative;
+}
 
-        /* &:hover {
-          background: $black;
-        } */
-      
-    
-    .btn_sort_container {
-      margin: 8px auto;
-      width: 220px;
-      display: flex;
-      justify-content: space-around;
-      cursor: pointer;
-    }
+.form_component form input:hover {
+    background: var(--black);
+  }  */
 
-      #goodToBad {
-        border-radius: 10px 0 0 10px;
-      }
 
-      #badToGood {
-        border-radius: 0 10px 10px 0;
-      }
-      #goodToBad,
-      #badToGood {
-        background: var(--color-1);
-        width: 110px;
-        transition: 0.3s;
-        position: relative;
-  
-        /* &:hover {
-          background: $black;
-        } */
-      }
+.form_component .btn_sort_container {
+margin: 8px auto;
+width: 220px;
+display: flex;
+justify-content: space-around;
+cursor: pointer;
+}
 
-      #goodToBad span {
-        transform: translateY(-50%) rotate(-90deg);
-        right: 18px;
-      }
+.form_component .btn_sort_container #goodToBad {
+  border-radius: 10px 0 0 10px;
+}
 
-      #badToGood span {
-        transform: translateY(-50%) rotate(90deg);
-        left: 16px;
-      }
-      #goodToBad span, #badToGood span {
-        position: absolute;
-        top: 50%;
-      }
+.form_component .btn_sort_container #badToGood {
+  border-radius: 0 10px 10px 0;
+}
 
-      .result {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+.form_component .btn_sort_container #goodToBad,
+.form_component .btn_sort_container #badToGood {
+  background: var(--color-1);
+  width: 110px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.form_component .btn_sort_container #goodToBad:hover,
+.form_component .btn_sort_container #badToGood:hover {
+  background: var(--black);
+} 
+
+.form_component .btn_sort_container #goodToBad span {
+  transform: translateY(-50%) rotate(-90deg);
+  right: 18px;
+}
+
+.form_component .btn_sort_container #badToGood span {
+  transform: translateY(-50%) rotate(90deg);
+  left: 16px;
+}
+.form_component .btn_sort_container #goodToBad span, #badToGood span {
+  position: absolute;
+  top: 50%;
+}
+
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
       
