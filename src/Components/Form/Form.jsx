@@ -6,7 +6,7 @@ import style from './form.module.css';
 const Form = () => {
 
     const [moviesData, setMoviesData] = useState([]);
-    const [search, setSearch] = useState("code");
+    const [search, setSearch] = useState("avengers");
     const [sortGoodBad, setSortGoodBad] = useState(null);
 
     useEffect(() => {
@@ -16,10 +16,6 @@ const Form = () => {
           )
           .then((res) => setMoviesData(res.data.results));
       }, [search]);
-
-
-  //console.log(moviesData);
-
       
     return (
         <section className={style.form_component}>
