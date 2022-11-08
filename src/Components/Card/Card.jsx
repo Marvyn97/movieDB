@@ -112,7 +112,7 @@ function Card({movie}) {
             ) : (
                 <div className={style.btn} onClick={() => {
                     deleteStorage();
-                    window.location.assign("https://moviedb-marvyn.netlify.app/coups-de-coeur");
+                    window.location.reload();
                 }}>
                     Supprimer de la liste
                 </div>
